@@ -18,7 +18,7 @@ I used Hyper-V on Windows 10, connected to a &ldquo;Default switch&rdquo; (inter
 <link rel=mask-icon href=https://markkerry.github.io/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.87.0">
+<meta name=generator content="Hugo 0.88.1">
 <script async src="https://www.googletagmanager.com/gtag/js?id="></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','')</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XZDLE8M8RG"></script>
@@ -230,51 +230,51 @@ Installing & Configuring CentOS 8 Minimal Install
 <ol start=10>
 <li>Once the installation is complete you can log into the VM with the <code>admin</code> username and password. First job will be to update the OS which can be achieved with the following command:</li>
 </ol>
-<pre><code class=language-terminal data-lang=terminal>sudo yum update
+<pre tabindex=0><code class=language-terminal data-lang=terminal>sudo yum update
 </code></pre><p><img loading=lazy src=images/yumUpdate.png alt=yumUpdate>
 </p>
 <p>After the updates are all installed you can either move onto the next part for the kubemaster VM, or complete part 1 again for workernode1 and workernode2.</p>
 <h2 id=setting-a-static-ip>Setting a Static IP<a hidden class=anchor aria-hidden=true href=#setting-a-static-ip>#</a></h2>
 <p>The next important steps will be to configure static IPs and then configure the hosts file. The following will instruct you how to do this with the kubemaster VM&rsquo;s IP address. To follow this again for the workernodes, change the IP accordingly.</p>
 <p>First backup the resolve.conf file:</p>
-<pre><code class=language-terminal data-lang=terminal>sudo cp /etc/resolv.conf /etc/resolv.conf.backup
+<pre tabindex=0><code class=language-terminal data-lang=terminal>sudo cp /etc/resolv.conf /etc/resolv.conf.backup
 </code></pre><p>Next we need to set the static IP in the ifcfg-eth0 file:</p>
-<pre><code class=language-terminal data-lang=terminal>cd /etc/sysconfig/network-scripts/
+<pre tabindex=0><code class=language-terminal data-lang=terminal>cd /etc/sysconfig/network-scripts/
 sudo vi ifcfg-eth0
 </code></pre><p>Press the insert key to modify the file, change BOOTPROTO from <code>dhcp</code> to <code>static</code> and add the IPADDR as below:</p>
-<pre><code class=language-terminal data-lang=terminal>BOOTPROTO=static
+<pre tabindex=0><code class=language-terminal data-lang=terminal>BOOTPROTO=static
 IPADDR=172.23.242.120
 </code></pre><p>Once complete, you can save you changes by pressing the Esc key then:</p>
-<pre><code class=language-terminal data-lang=terminal>:wq!
+<pre tabindex=0><code class=language-terminal data-lang=terminal>:wq!
 </code></pre><p>Next, modify the network file as follows:</p>
-<pre><code class=language-terminal data-lang=terminal>sudo vi /etc/sysconfig/network
+<pre tabindex=0><code class=language-terminal data-lang=terminal>sudo vi /etc/sysconfig/network
 </code></pre><p>Add the following to the file:</p>
-<pre><code class=language-terminal data-lang=terminal>NETWORKING=yes
+<pre tabindex=0><code class=language-terminal data-lang=terminal>NETWORKING=yes
 GATEWAY=172.23.240.1
 </code></pre><p>Once complete, you can save you changes by pressing the Esc key then:</p>
-<pre><code class=language-terminal data-lang=terminal>:wq!
+<pre tabindex=0><code class=language-terminal data-lang=terminal>:wq!
 </code></pre><p>Now reboot the machine. I recommend from here you complete configuring all three VMs before moving onto the next part:</p>
-<pre><code class=language-terminal data-lang=terminal>shutdown -r now
+<pre tabindex=0><code class=language-terminal data-lang=terminal>shutdown -r now
 </code></pre>
 <h2 id=update-the-hosts-file>Update the hosts File<a hidden class=anchor aria-hidden=true href=#update-the-hosts-file>#</a></h2>
 <p>Updating the hosts files allows for communication over hostname rather than IP address. Change the hosts file on each machine as follows:</p>
-<pre><code class=language-terminal data-lang=terminal>sudo vi /etc/hosts
+<pre tabindex=0><code class=language-terminal data-lang=terminal>sudo vi /etc/hosts
 </code></pre><p>Add the following:</p>
-<pre><code class=language-terminal data-lang=terminal>172.23.242.120 kubemaster
+<pre tabindex=0><code class=language-terminal data-lang=terminal>172.23.242.120 kubemaster
 172.23.242.121 workernode1
 172.23.242.122 workernode2
 </code></pre><p>Once complete, you can save you changes by pressing the Esc key then:</p>
-<pre><code class=language-terminal data-lang=terminal>:wq!
+<pre tabindex=0><code class=language-terminal data-lang=terminal>:wq!
 </code></pre>
 <h2 id=generate-a-ssh-key-pair>Generate a SSH Key Pair<a hidden class=anchor aria-hidden=true href=#generate-a-ssh-key-pair>#</a></h2>
 <p>To enable us to easily access the worker nodes from the kubemaster for system administration, and possibly configuration management with Ansible at a later date, we can easily setup an SSH key-pair as follows:</p>
 <p>From the kubemaster VM, create the ssh key-pair as follows:</p>
-<pre><code class=language-terminal data-lang=terminal>ssh-keygen -t rsa -b 4096
+<pre tabindex=0><code class=language-terminal data-lang=terminal>ssh-keygen -t rsa -b 4096
 </code></pre><p>Press Enter to accept the key to be saved in <code>/home/admin/.ssh</code> and do not specify a passphrase. Then use the following command to copy to workernode1 and workernode2:</p>
-<pre><code class=language-termial data-lang=termial>ssh-copy-id admin@workernode1
+<pre tabindex=0><code class=language-termial data-lang=termial>ssh-copy-id admin@workernode1
 ssh-copy-id admin@workernode2
 </code></pre><p>Test by connecting to the machine via SSH:</p>
-<pre><code class=language-terminal data-lang=terminal>ssh admin@workernode1
+<pre tabindex=0><code class=language-terminal data-lang=terminal>ssh admin@workernode1
 </code></pre>
 <h2 id=summary>Summary<a hidden class=anchor aria-hidden=true href=#summary>#</a></h2>
 <p>We have now successfully created 3 x CentOS 8 virtual machines with connectivity to each other and the internet. Each machine can ping each other via hostname, and the kubemaster VM can ssh onto both workernode1 and 2.</p>

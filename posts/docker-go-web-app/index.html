@@ -18,7 +18,7 @@ The container will install Go, so there is no need to install it locally on your
 <link rel=mask-icon href=https://markkerry.github.io/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.87.0">
+<meta name=generator content="Hugo 0.88.1">
 <script async src="https://www.googletagmanager.com/gtag/js?id="></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','')</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XZDLE8M8RG"></script>
@@ -113,12 +113,12 @@ Running a Local Go Web App in Docker
 <p>The container will install Go, so there is no need to install it locally on your machine. Docker is a prerequisite, however.</p>
 <p>First, lets take a look at the folder structure of where to keep your <code>dockerfile</code> and <code>main.go</code> code.</p>
 <h2 id=folder-structure>Folder Structure<a hidden class=anchor aria-hidden=true href=#folder-structure>#</a></h2>
-<pre><code class=language-terminal data-lang=terminal>~/dockerfile
+<pre tabindex=0><code class=language-terminal data-lang=terminal>~/dockerfile
 ~/go/src/app/main.go
 </code></pre>
 <h2 id=dockerfile>Dockerfile<a hidden class=anchor aria-hidden=true href=#dockerfile>#</a></h2>
 <p>The dockerfile contains the instruction of how to build our docker image and the app to run when the container is created from the image. Let&rsquo;s start by creating the dockerfile:</p>
-<pre><code class=language-teminal data-lang=teminal>cd ~
+<pre tabindex=0><code class=language-teminal data-lang=teminal>cd ~
 touch dockerfile
 </code></pre><p>Here I referenced the following <a href=https://hub.docker.com/_/golang>Docker/Golang</a> official image documentation. Using your favourite code editor, modify the contents of the dockerfile to look as follows:</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-docker data-lang=docker><span style=color:#66d9ef>FROM</span><span style=color:#e6db74> golang:1.14</span><span style=color:#960050;background-color:#1e0010>
@@ -133,7 +133,7 @@ touch dockerfile
 </span></code></pre></div>
 <h2 id=maingo>main.go<a hidden class=anchor aria-hidden=true href=#maingo>#</a></h2>
 <p>Now let&rsquo;s create the main.go file and the folder structure to store it.</p>
-<pre><code class=language-termial data-lang=termial>mkdir ~/go
+<pre tabindex=0><code class=language-termial data-lang=termial>mkdir ~/go
 mkdir ~/go/src
 mkdir ~/go/src/app
 touch ~/go/src/app/main.go
@@ -174,7 +174,7 @@ touch ~/go/src/app/main.go
 </code></pre></div><p><img loading=lazy src=images/dockerBuild.jpg alt=dockerBuild>
 </p>
 <p>Let&rsquo;s take a look at the container image by running:</p>
-<pre><code class=language-terminal data-lang=terminal>docker image ls
+<pre tabindex=0><code class=language-terminal data-lang=terminal>docker image ls
 </code></pre><p>I have two docker containers in my example. The one we just created is called <strong>go-app</strong> with an <em>IMAGE ID</em> of <strong>8128cf5f8047</strong>.</p>
 <p><img loading=lazy src=images/dockerImage.jpg alt=dockerImage>
 </p>
@@ -207,7 +207,7 @@ docker push markkerry/go-app:v1
 </code></pre></div><p>If you ran the container with the <code>-it</code> (interactive) flag instead of <code>-d</code> (detached), press <code>ctrl + c</code> to cancel out of the interactive container session.</p>
 <p>Running <code>docker container ls</code> will show the container is no longer running and was also deleted after it stopped.</p>
 <p>If you want to delete the image, get the IMAGE ID by running <code>docker image ls</code>, then running the following (8128cf5f8047 in my example is the IMAGE ID):</p>
-<pre><code class=language-terminal data-lang=terminal>docker image rm 8128cf5f8047
+<pre tabindex=0><code class=language-terminal data-lang=terminal>docker image rm 8128cf5f8047
 </code></pre><p>Next I plan the create a container which does something else than simply run a web page stating the host of the container it is running in. But this does feel like a nice first step when progressing towards Docker Swarm or Kubernetes. Also, I will hopefully look to deploy to an Azure Container Instance or Azure Kubernetes Service.</p>
 </div>
 <footer class=post-footer>

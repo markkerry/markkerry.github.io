@@ -18,7 +18,7 @@ What are Azure Container Instances Azure Container Instances provides basic cont
 <link rel=mask-icon href=https://markkerry.github.io/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.87.0">
+<meta name=generator content="Hugo 0.88.1">
 <script async src="https://www.googletagmanager.com/gtag/js?id="></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','')</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XZDLE8M8RG"></script>
@@ -152,7 +152,7 @@ az bicep vesion
 <h3 id=outputs>Outputs<a hidden class=anchor aria-hidden=true href=#outputs>#</a></h3>
 <p>The outputs which will be displayed upon completion of deployment is the IPv4 address and DNS name.</p>
 <p>To begin, create a new file with the .bicep extension and paste in the below:</p>
-<pre><code class=language-bicep data-lang=bicep>param containerName string = 'go-app'
+<pre tabindex=0><code class=language-bicep data-lang=bicep>param containerName string = 'go-app'
 param location string = 'westeurope'
 param imageName string = 'markkerry/go-app:v1'
 param cpuCores int = 1
@@ -203,7 +203,7 @@ output containerDnsName string = containerGroup.properties.ipAddress.fqdn
 </code></pre><p>Save the file and now it&rsquo;s time to build the bicep file into json.</p>
 <h2 id=build-the-bicep-file>Build the Bicep File<a hidden class=anchor aria-hidden=true href=#build-the-bicep-file>#</a></h2>
 <p>In your terminal, change directory to the location of the bicep file and run the following Az CLI command to build the json ARM template.</p>
-<pre><code class=language-terminal data-lang=terminal>az bicep build --file .\containerInstance.bicep  
+<pre tabindex=0><code class=language-terminal data-lang=terminal>az bicep build --file .\containerInstance.bicep  
 </code></pre><p>Notice this has gone from a 48 line bicep file to a 90 line json. You can find the <a href=https://github.com/markkerry/basic-go-container/blob/main/IaC/containerInstance.json>json file here</a>.</p>
 <h2 id=deploy-the-arm-template>Deploy the ARM Template<a hidden class=anchor aria-hidden=true href=#deploy-the-arm-template>#</a></h2>
 <p>Now it&rsquo;s time to deploy the resource. Start by authenticating to Azure and creating a resource group.</p>

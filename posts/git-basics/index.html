@@ -19,7 +19,7 @@
 <link rel=mask-icon href=https://markkerry.github.io/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.87.0">
+<meta name=generator content="Hugo 0.88.1">
 <script async src="https://www.googletagmanager.com/gtag/js?id="></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','')</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XZDLE8M8RG"></script>
@@ -120,27 +120,27 @@ Git Basics
 </blockquote>
 <h2 id=directory-structure>Directory Structure<a hidden class=anchor aria-hidden=true href=#directory-structure>#</a></h2>
 <p>In the following example, I created my new repository I want to push to GutHub in <code>C:\git\repos\</code> and created a new folder called <code>basic-go-container</code>.</p>
-<pre><code class=language-terminal data-lang=terminal>cd C:\git\repos\
+<pre tabindex=0><code class=language-terminal data-lang=terminal>cd C:\git\repos\
 mkdir basic-go-container
 </code></pre><p>The contents of the folder is as follows</p>
-<pre><code class=language-terminal data-lang=terminal>dockerfile
+<pre tabindex=0><code class=language-terminal data-lang=terminal>dockerfile
 └─go
   └─src
      └─app
        main.go
 </code></pre><p>Change directory into the newly created directory</p>
-<pre><code class=language-terminal data-lang=terminal>cd C:\git\repos\basic-go-container
+<pre tabindex=0><code class=language-terminal data-lang=terminal>cd C:\git\repos\basic-go-container
 </code></pre>
 <h2 id=initialise-the-branch>Initialise the Branch<a hidden class=anchor aria-hidden=true href=#initialise-the-branch>#</a></h2>
 <p>You can initialise a new Git repository and call the initial branch <strong>main</strong> as follows:</p>
-<pre><code class=language-git data-lang=git>git init -b main
+<pre tabindex=0><code class=language-git data-lang=git>git init -b main
 </code></pre><p>Notice the Git summary status in the terminal changes as the locally installed Git application and posh-git module recognises the current directory is a Git repository.</p>
 <p><img loading=lazy src=images/gitInit.png alt=gitInit>
 </p>
 <p>The +2 shows that there are two new added files (dockerfile and main.go), but the &ldquo;!&rdquo; means they are un-tracked. Now we can change that.</p>
 <h2 id=first-commit>First Commit<a hidden class=anchor aria-hidden=true href=#first-commit>#</a></h2>
 <p>Track all the files within the repo and make the initial commit.</p>
-<pre><code class=language-git data-lang=git>git add *
+<pre tabindex=0><code class=language-git data-lang=git>git add *
 git commit -m &quot;initial commit&quot;
 </code></pre><p>After <code>git add *</code> the &ldquo;!&rdquo; in the prompt changes to &ldquo;~&rdquo;, which means there are uncommitted changes. After <code>git commit</code> the status turns green as there are currently no un-tracked or uncommitted changes pending.</p>
 <p><img loading=lazy src=images/gitCommit.png alt=gitInit>
@@ -151,7 +151,7 @@ git commit -m &quot;initial commit&quot;
 </p>
 <h2 id=define-the-remote-repository>Define the Remote Repository<a hidden class=anchor aria-hidden=true href=#define-the-remote-repository>#</a></h2>
 <p>Next, I have to define the remote repository where I want to push the local repo to. I&rsquo;m using my markkerry GitHub account and the new repo I just created.</p>
-<pre><code class=language-git data-lang=git>git remote add origin https://github.com/markkerry/basic-go-container.git
+<pre tabindex=0><code class=language-git data-lang=git>git remote add origin https://github.com/markkerry/basic-go-container.git
 
 # Now let's verify it
 git remote -v
@@ -159,7 +159,7 @@ git remote -v
 </p>
 <h2 id=push-to-github>Push to GitHub<a hidden class=anchor aria-hidden=true href=#push-to-github>#</a></h2>
 <p>It&rsquo;s time to push the locally committed changes to the remote GitHub repo. The -u option automatically sets that upstream for you, linking your repo to a central one</p>
-<pre><code class=language-git data-lang=git>git push -u origin main
+<pre tabindex=0><code class=language-git data-lang=git>git push -u origin main
 </code></pre><p><img loading=lazy src=images/gitPush.png alt=gitPush>
 </p>
 <p>You can see the newly create repo in GitHub.</p>
@@ -167,7 +167,7 @@ git remote -v
 </p>
 <h2 id=additional-commits>Additional Commits<a hidden class=anchor aria-hidden=true href=#additional-commits>#</a></h2>
 <p>Now let&rsquo;s create a <code>README.md</code> file with a bold H1 header of <strong>basic-go-container</strong>. Then we&rsquo;ll add the file, commit the change, and push to GitHub.</p>
-<pre><code class=language-terminal data-lang=terminal>echo &quot;# basic-go-container&quot; &gt;&gt; README.md
+<pre tabindex=0><code class=language-terminal data-lang=terminal>echo &quot;# basic-go-container&quot; &gt;&gt; README.md
 git add README.md
 git commit -m &quot;added README.md&quot;
 git push -u origin main

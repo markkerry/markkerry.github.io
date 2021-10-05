@@ -20,7 +20,7 @@ The two repos will be named as follows:
 <link rel=mask-icon href=https://markkerry.github.io/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.87.0">
+<meta name=generator content="Hugo 0.88.1">
 <script async src="https://www.googletagmanager.com/gtag/js?id="></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','')</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XZDLE8M8RG"></script>
@@ -126,7 +126,7 @@ HUGO Static Site Hosted on GitHub Pages - Part 3: Build and Deploy
 <p>The <em>username</em>-hugo repo is where we are going to commit our site to. Then we&rsquo;ll create GitHub action in this repo which will install HUGO, build the site, and push it to the other <em>username</em>.github.io repo after each commit/push.</p>
 <h3 id=create-the-github-action>Create the GitHub Action<a hidden class=anchor aria-hidden=true href=#create-the-github-action>#</a></h3>
 <p>The following GitHub action was created by <a href=https://github.com/peaceiris>peaceiris</a>. In your local username-hugo repo, create the following directories</p>
-<pre><code class=language-terminal data-lang=terminal>mkdir .github
+<pre tabindex=0><code class=language-terminal data-lang=terminal>mkdir .github
 cd .github
 mkdir workflows
 cd workflows
@@ -185,7 +185,7 @@ cd workflows
 </p>
 <h3 id=configure-the-publish-dir>Configure the Publish Dir<a hidden class=anchor aria-hidden=true href=#configure-the-publish-dir>#</a></h3>
 <p>Now that the remote GitHub repos and access token is all configured, it&rsquo;s time to edit the <code>config.toml</code> and set the publishDir. We will be setting it to &ldquo;docs&rdquo; which is the directory the built site will be created in by the GitHub action. Looking back at the main.yml file you can see <code>publish_dir: ./docs</code>. This is the directory the action will push to the remote repo. open the <code>config.toml</code> in the root of your site and add the last line.</p>
-<pre><code class=language-terminal data-lang=terminal>baseURL = &quot;http://example.org/&quot;
+<pre tabindex=0><code class=language-terminal data-lang=terminal>baseURL = &quot;http://example.org/&quot;
 languageCode = &quot;en-us&quot;
 title = &quot;My New Hugo Site&quot;
 theme = &quot;PaperMod&quot;
@@ -193,7 +193,7 @@ publishDir = &quot;docs&quot;
 </code></pre>
 <h3 id=commit-and-push-the-site-to-github>Commit and Push the Site to GitHub<a hidden class=anchor aria-hidden=true href=#commit-and-push-the-site-to-github>#</a></h3>
 <p>Finally, we can commit the changes in our local repo, push them to the remote GitHub repo (username-hugo) and watch the GitHub action automatically build the site to the docs folder, then publish docs folder to the other repo (username.github.io)</p>
-<pre><code class=language-terminal data-lang=terminal>cd c:\git\repos\username-hugo
+<pre tabindex=0><code class=language-terminal data-lang=terminal>cd c:\git\repos\username-hugo
 git add *
 git commit -m &quot;initial commit&quot;
 git remote add origin https://github.com/username/username-hugo.git

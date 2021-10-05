@@ -20,7 +20,7 @@ What is Serverless LAPS Local Admin Password Solution (LAPS) is a great solution
 <link rel=mask-icon href=https://markkerry.github.io/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.87.0">
+<meta name=generator content="Hugo 0.88.1">
 <script async src="https://www.googletagmanager.com/gtag/js?id="></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','')</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XZDLE8M8RG"></script>
@@ -169,11 +169,11 @@ Serverless LAPS Azure Function and Proactive Remediation
 <li>An Azure subscription</li>
 </ul>
 <h3 id=windows-installation---chocolatey>Windows Installation - Chocolatey<a hidden class=anchor aria-hidden=true href=#windows-installation---chocolatey>#</a></h3>
-<pre><code class=language-terminal data-lang=terminal>choco install azure-functions-core-tools-3 -y
+<pre tabindex=0><code class=language-terminal data-lang=terminal>choco install azure-functions-core-tools-3 -y
 choco install azure-cli -y
 choco install dotnetcore-sdk -y
 </code></pre><h3 id=macos-installation---homebrew>macOS Installation - Homebrew<a hidden class=anchor aria-hidden=true href=#macos-installation---homebrew>#</a></h3>
-<pre><code class=language-terminal data-lang=terminal>brew update
+<pre tabindex=0><code class=language-terminal data-lang=terminal>brew update
 brew tap azure/functions
 brew install azure-functions-core-tools@3
 brew install azure-cli
@@ -181,7 +181,7 @@ brew install --cask dotnet-sdk
 </code></pre>
 <h2 id=create-the-slaps-azure-function-locally-using-azure-function-core-tools>Create the SLAPS Azure Function Locally Using Azure Function Core Tools<a hidden class=anchor aria-hidden=true href=#create-the-slaps-azure-function-locally-using-azure-function-core-tools>#</a></h2>
 <p>Start by creating the folder structure on your machine</p>
-<pre><code class=language-terminal data-lang=terminal>cd C:\git\repos
+<pre tabindex=0><code class=language-terminal data-lang=terminal>cd C:\git\repos
 mkdir Serverless-LAPS
 cd Serverless-LAPS
 mkdir function
@@ -190,21 +190,21 @@ mkdir src
 mkdir tst
 cd src
 </code></pre><p>Next we can create (initialise) a new project. Ensure the function name is unique (do not use &ldquo;mk&rdquo;).</p>
-<pre><code class=language-terminal data-lang=terminal>func init fn-slaps-mk --powershell
+<pre tabindex=0><code class=language-terminal data-lang=terminal>func init fn-slaps-mk --powershell
 </code></pre><p><img loading=lazy src=images/initFunction.png alt=initFunction>
 </p>
 <p>Now change directory into the new project.</p>
 <blockquote>
 <p><strong>NOTE</strong>: Ensure you change &ldquo;mk&rdquo; to your initials or whatever you want. The function name should be unique as will be included in the URI to trigger it.</p>
 </blockquote>
-<pre><code class=language-terminal data-lang=terminal>cd fn-slaps-mk
+<pre tabindex=0><code class=language-terminal data-lang=terminal>cd fn-slaps-mk
 </code></pre><p>And create a new function called <strong>Set-KVSecret</strong> with an HTTP Trigger and authorisation level of &ldquo;function&rdquo;.</p>
-<pre><code class=language-terminal data-lang=terminal>func new --name Set-KVSecret --template &quot;HTTP Trigger&quot; --authlevel &quot;function&quot;
+<pre tabindex=0><code class=language-terminal data-lang=terminal>func new --name Set-KVSecret --template &quot;HTTP Trigger&quot; --authlevel &quot;function&quot;
 </code></pre><p>Then select PowerShell as the language. This appears twice, just highlight the first one and hit return.</p>
 <p><img loading=lazy src=images/newFunction.png alt=newFunction>
 </p>
 <p>The <code>src</code> directory will then look as follows</p>
-<pre><code class=language-terminal data-lang=terminal>├───src
+<pre tabindex=0><code class=language-terminal data-lang=terminal>├───src
 │   └───fn-slaps-mk
 │       ├───.vscode
 │       └───Set-KVSecret
@@ -246,7 +246,7 @@ Push-OutputBinding -Name Response -Value (<span style=color:#66d9ef>[HttpRespons
     Body = $password
 })
 </code></pre></div><p>Save and close <code>run.ps1</code> then in your terminal start the function</p>
-<pre><code class=language-terminal data-lang=terminal>func start
+<pre tabindex=0><code class=language-terminal data-lang=terminal>func start
 </code></pre><p>Notice the function is available via <code>http://localhost:7071/api/Set-KVSecret</code></p>
 <p>Then invoke the function with the following code</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell>$userName = <span style=color:#e6db74>&#34;Administrator&#34;</span>
@@ -273,7 +273,7 @@ $uri = <span style=color:#e6db74>&#34;http://localhost:7071/api/Set-KVSecret&#34
     Write-Host <span style=color:#e6db74>&#34;</span>$(Get-Date -format g)<span style=color:#e6db74>: Failed to submit Local Administrator configuration. StatusCode: </span>$($_.Exception.Response.StatusCode.value__)<span style=color:#e6db74>. StatusDescription: </span>$($_.Exception.Response.StatusDescription)<span style=color:#e6db74>&#34;</span>
 }
 </code></pre></div><p>Every time you run the code above the local function will return a different, unique password. For example:</p>
-<pre><code class=language-terminal data-lang=terminal>q6dMc&amp;g2j4kX?39
+<pre tabindex=0><code class=language-terminal data-lang=terminal>q6dMc&amp;g2j4kX?39
 h9w3JC*k4pi76u@
 58&amp;6tn74uYeaJ$p
 2mdx#fN63t4a@H7

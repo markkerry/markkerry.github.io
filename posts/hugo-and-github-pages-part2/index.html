@@ -19,7 +19,7 @@ Create the Site Browse to your local directory where you want to keep the site&r
 <link rel=mask-icon href=https://markkerry.github.io/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.87.0">
+<meta name=generator content="Hugo 0.88.1">
 <script async src="https://www.googletagmanager.com/gtag/js?id="></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','')</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XZDLE8M8RG"></script>
@@ -112,7 +112,7 @@ HUGO Static Site Hosted on GitHub Pages - Part 2: Create the Site
 <p>The Official <a href=https://gohugo.io/getting-started/quick-start/>HUGO getting started</a> docs are a great resource to read through and recommend you get started there if you are having any trouble following the below.</p>
 <h3 id=create-the-site>Create the Site<a hidden class=anchor aria-hidden=true href=#create-the-site>#</a></h3>
 <p>Browse to your local directory where you want to keep the site&rsquo;s source files, and enter the following commands to create the site (change markkerry to your GitHub username).</p>
-<pre><code class=language-terminal data-lang=terminal># Browse to the directory
+<pre tabindex=0><code class=language-terminal data-lang=terminal># Browse to the directory
 cd c:\git\repos
 
 # Use the hugo command to create a new site
@@ -124,20 +124,20 @@ cd markkerry-hugo
 # initialise the repo
 git init -b main
 </code></pre><p>I used PaperMod as my theme so let&rsquo;s install it now.</p>
-<pre><code class=language-terminal data-lang=terminal>git clone https://github.com/adityatelange/hugo-PaperMod themes/PaperMod --depth=1
+<pre tabindex=0><code class=language-terminal data-lang=terminal>git clone https://github.com/adityatelange/hugo-PaperMod themes/PaperMod --depth=1
 
 # Browse to themes\PaperMod and delete the .git directory
 </code></pre><p>Now open the <code>config.toml</code> file, set the theme as PaperMod and save the file. Note, here you can change the title of the site to something that is appropriate to you. See below:</p>
-<pre><code class=language-terminal data-lang=terminal>baseURL = &quot;http://example.org/&quot;
+<pre tabindex=0><code class=language-terminal data-lang=terminal>baseURL = &quot;http://example.org/&quot;
 languageCode = &quot;en-us&quot;
 title = &quot;My New Hugo Site&quot;
 theme = &quot;PaperMod&quot;
 </code></pre>
 <h3 id=create-your-first-post>Create Your First Post<a hidden class=anchor aria-hidden=true href=#create-your-first-post>#</a></h3>
 <p>Now it&rsquo;s time to create our first post by running the following <code>hugo</code> command:</p>
-<pre><code>hugo new posts/name-of-first-post.md
+<pre tabindex=0><code>hugo new posts/name-of-first-post.md
 </code></pre><p>This will be created in the content/posts directory. Edit the name-of-first-post.md and add some text. I added Hello World. Notice that the &ldquo;draft&rdquo; is set to true. This means that the page will not display in GitHub Pages as HUGO does not deploy drafts. Once you are happy with the post change &ldquo;draft&rdquo; to false.</p>
-<pre><code class=language-terminal data-lang=terminal>---
+<pre tabindex=0><code class=language-terminal data-lang=terminal>---
 title: &quot;Name of First Post&quot;
 date: 2021-03-28T16:23:28Z
 draft: true
@@ -147,7 +147,7 @@ Hello World
 </code></pre>
 <h3 id=running-the-site-locally>Running the Site Locally<a hidden class=anchor aria-hidden=true href=#running-the-site-locally>#</a></h3>
 <p>Let&rsquo;s test the site by running it locally to see how it looks. <code>-D</code> means with drafts enabled.</p>
-<pre><code class=language-terminal data-lang=terminal>hugo server -D
+<pre tabindex=0><code class=language-terminal data-lang=terminal>hugo server -D
 </code></pre><p><img loading=lazy src=images/hugoServer.png alt=hugoServer>
 </p>
 <p>Notice at the bottom it states the Web Server is running on localhost port 1313.</p>
