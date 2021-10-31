@@ -71,6 +71,20 @@
 </header>
 <article class=post-entry>
 <figure class=entry-cover>
+<img loading=lazy srcset="https://markkerry.github.io/posts/automated-autopilot-tenant-move-part2/images/cover_hudac7e09efd05c6b318817586da29454c_16669_360x0_resize_box_3.png 360w ,https://markkerry.github.io/posts/automated-autopilot-tenant-move-part2/images/cover_hudac7e09efd05c6b318817586da29454c_16669_480x0_resize_box_3.png 480w ,https://markkerry.github.io/posts/automated-autopilot-tenant-move-part2/images/cover.png 620w" sizes="(min-width: 768px) 720px, 100vw" src=https://markkerry.github.io/posts/automated-autopilot-tenant-move-part2/images/cover.png alt width=620 height=197>
+</figure>
+<header class=entry-header>
+<h2>Automated Autopilot Tenant Move Part 2: Using PowerShell and Graph</h2>
+</header>
+<section class=entry-content>
+<p>Following on from my previous post, this one provides a far simpler process to automatically de-register your Windows Autopilot devices from one tenant, and provision them in another tenant. It’s not exactly a “part 2”, rather a different, simpler approach.
+I came across a great post on MsEndpointMgr which details the steps to extract your Autopilot profile in the new tenant, and copy to the machines in the old tenant ready for them to be wiped....</p>
+</section>
+<footer class=entry-footer>October 31, 2021&nbsp;·&nbsp;6 min&nbsp;·&nbsp;Mark kerry</footer>
+<a class=entry-link aria-label="post link to Automated Autopilot Tenant Move Part 2: Using PowerShell and Graph" href=https://markkerry.github.io/posts/automated-autopilot-tenant-move-part2/></a>
+</article>
+<article class=post-entry>
+<figure class=entry-cover>
 <img loading=lazy srcset="https://markkerry.github.io/posts/automated-autopilot-tenant-move-part1/images/cover_hu8b85997703f7fd1e8bd9dab3c1ae2e27_25957_360x0_resize_box_3.png 360w ,https://markkerry.github.io/posts/automated-autopilot-tenant-move-part1/images/cover_hu8b85997703f7fd1e8bd9dab3c1ae2e27_25957_480x0_resize_box_3.png 480w ,https://markkerry.github.io/posts/automated-autopilot-tenant-move-part1/images/cover.png 712w" sizes="(min-width: 768px) 720px, 100vw" src=https://markkerry.github.io/posts/automated-autopilot-tenant-move-part1/images/cover.png alt width=712 height=146>
 </figure>
 <header class=entry-header>
@@ -198,22 +212,6 @@ I used Hyper-V on Windows 10, connected to a “Default switch” (internal), an
 </section>
 <footer class=entry-footer>May 9, 2021&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Mark kerry</footer>
 <a class=entry-link aria-label="post link to Installing & Configuring CentOS 8 Minimal Install" href=https://markkerry.github.io/posts/centos8-setup/></a>
-</article>
-<article class=post-entry>
-<figure class=entry-cover>
-<img loading=lazy srcset="https://markkerry.github.io/posts/serverless-laps-azure-function/images/cover_hu121f4f4a3965575e5f6eedf353b8a073_27651_360x0_resize_box_3.png 360w ,https://markkerry.github.io/posts/serverless-laps-azure-function/images/cover_hu121f4f4a3965575e5f6eedf353b8a073_27651_480x0_resize_box_3.png 480w ,https://markkerry.github.io/posts/serverless-laps-azure-function/images/cover.png 667w" sizes="(min-width: 768px) 720px, 100vw" src=https://markkerry.github.io/posts/serverless-laps-azure-function/images/cover.png alt width=667 height=206>
-</figure>
-<header class=entry-header>
-<h2>Serverless LAPS Azure Function and Proactive Remediation</h2>
-</header>
-<section class=entry-content>
-<p>Based on the great solution created by John Seerden with a little help creating and deploying Azure Functions by the Serverless on Azure YouTube channel.
-All of the code in this post can be found in my GitHub repo
-I am only posting a few differences here, such as creating the Azure resources using AZ CLI and creating/testing/deploying the function using the Azure Functions Core Tools CLI.
-What is Serverless LAPS Local Admin Password Solution (LAPS) is a great solution from Microsoft to allow IT admins to automatically recycle local admin accounts on domain joined Windows machines....</p>
-</section>
-<footer class=entry-footer>April 25, 2021&nbsp;·&nbsp;9 min&nbsp;·&nbsp;Mark kerry</footer>
-<a class=entry-link aria-label="post link to Serverless LAPS Azure Function and Proactive Remediation" href=https://markkerry.github.io/posts/serverless-laps-azure-function/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
