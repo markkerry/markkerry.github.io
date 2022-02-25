@@ -85,6 +85,24 @@
 </article>
 <article class=post-entry>
 <figure class=entry-cover>
+<img loading=lazy src=https://markkerry.github.io/posts/2022/02/acr-push-pull/images/cover.svg alt>
+</figure>
+<header class=entry-header>
+<h2>Quick How-to: Push/Pull to Azure Container Registry</h2>
+</header>
+<section class=entry-content>
+<p>In this post I will detail the quick steps to push and pull a Docker container image from an Azure Container Registry.
+Using my Go app, I stopped at building the container and continued from here:
+Create the Azure Container Registry In the Azure portal, browse to the resource group of your choice or create a new one.
+Select Create > Containers > Container Registry
+I specified the following:
+Subscription Resource group Registry Name: acrmkmdsn Location: UK South Availability zones: Disabled SKU: Standard Leave the rest as default and continue on to Create....</p>
+</section>
+<footer class=entry-footer>February 20, 2022&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Mark kerry</footer>
+<a class=entry-link aria-label="post link to Quick How-to: Push/Pull to Azure Container Registry" href=https://markkerry.github.io/posts/2022/02/acr-push-pull/></a>
+</article>
+<article class=post-entry>
+<figure class=entry-cover>
 <img loading=lazy srcset="https://markkerry.github.io/posts/2022/02/ubuntu-server-lab/images/cover_hu9a8cc3c6eb196a4976206cf5a7679f66_61032_360x0_resize_box_3.png 360w ,https://markkerry.github.io/posts/2022/02/ubuntu-server-lab/images/cover_hu9a8cc3c6eb196a4976206cf5a7679f66_61032_480x0_resize_box_3.png 480w ,https://markkerry.github.io/posts/2022/02/ubuntu-server-lab/images/cover.png 702w" sizes="(min-width: 768px) 720px, 100vw" src=https://markkerry.github.io/posts/2022/02/ubuntu-server-lab/images/cover.png alt width=702 height=336>
 </figure>
 <header class=entry-header>
@@ -214,21 +232,6 @@ Deploy Open PowerShell and change directory to the location of your ARM template
 </section>
 <footer class=entry-footer>July 4, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Mark kerry</footer>
 <a class=entry-link aria-label="post link to Azure ARM Templates - Part 3: Deployment" href=https://markkerry.github.io/posts/2021/07/azure-arm-templates-part-3-deployment/></a>
-</article>
-<article class=post-entry>
-<figure class=entry-cover>
-<img loading=lazy srcset="https://markkerry.github.io/posts/2021/07/azure-arm-templates-part-2-testing/images/cover_hu982d4e825f3c4787d83bcb8388542dbc_22917_360x0_resize_box_3.png 360w ,https://markkerry.github.io/posts/2021/07/azure-arm-templates-part-2-testing/images/cover_hu982d4e825f3c4787d83bcb8388542dbc_22917_480x0_resize_box_3.png 480w ,https://markkerry.github.io/posts/2021/07/azure-arm-templates-part-2-testing/images/cover.png 662w" sizes="(min-width: 768px) 720px, 100vw" src=https://markkerry.github.io/posts/2021/07/azure-arm-templates-part-2-testing/images/cover.png alt width=662 height=346>
-</figure>
-<header class=entry-header>
-<h2>Azure ARM Templates - Part 2: Testing</h2>
-</header>
-<section class=entry-content>
-<p>Following on from authoring the Azure ARM Templates - Part 1: Development post, in this one I will cover testing the ARM template.
-Two potential ways to test the ARM templates is by manually building a Pester test, and another is by using Microsoft’s Azure Resource Manager Template Toolkit (arm-ttk) module.
-You can run local tests against ARM templates using PowerShell - which I will demonstrate in the post - but most commonly template testing and validating is used during a CI pipeline....</p>
-</section>
-<footer class=entry-footer>July 3, 2021&nbsp;·&nbsp;4 min&nbsp;·&nbsp;Mark kerry</footer>
-<a class=entry-link aria-label="post link to Azure ARM Templates - Part 2: Testing" href=https://markkerry.github.io/posts/2021/07/azure-arm-templates-part-2-testing/></a>
 </article>
 <footer class=page-footer>
 <nav class=pagination>
