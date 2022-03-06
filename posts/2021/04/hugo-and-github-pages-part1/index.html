@@ -3,14 +3,13 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
-<title>HUGO Static Site Hosted on GitHub Pages - Part 1: Intro | markkerry.github.io</title>
-<meta name=keywords content="HUGO,GitHub Pages,GitHub Actions">
+<title>HUGO Static Site Hosted on GitHub Pages - Part 1: Intro | markkerry.github.io</title><meta name=keywords content="HUGO,GitHub Pages,GitHub Actions">
 <meta name=description content="The following series of posts will walk through the process I used to create and build this HUGO site, hosted in GitHub Pages. Everything required in the following posts is free. HUGO/templates, GitHub Pages, GitHub Actions is all free to use.
 What is HUGO? HUGO is an open source static site generator written in GO. I chose HUGO because it looked simple to get started, all posts are written in markdown, and was compatible with GitHub pages.">
 <meta name=author content="Mark kerry">
 <link rel=canonical href=https://markkerry.github.io/posts/2021/04/hugo-and-github-pages-part1/>
 <link crossorigin=anonymous href=/assets/css/stylesheet.min.b9ff4cc257e914dab489bd18086151800e18f91456a5174bf28489210227a659.css integrity="sha256-uf9MwlfpFNq0ib0YCGFRgA4Y+RRWpRdL8oSJIQInplk=" rel="preload stylesheet" as=style>
-<script defer crossorigin=anonymous src=/assets/js/highlight.min.7680afc38aa6b15ddf158a4f3780b7b1f7dde7e91d26f073e6229bb7a0793c92.js integrity="sha256-doCvw4qmsV3fFYpPN4C3sffd5+kdJvBz5iKbt6B5PJI=" onload=hljs.initHighlightingOnLoad()></script>
+<script defer crossorigin=anonymous src=/assets/js/highlight.min.4dcb3c4f38462f66c6b6137227726f5543cb934cca9788f041c087e374491df2.js integrity="sha256-Tcs8TzhGL2bGthNyJ3JvVUPLk0zKl4jwQcCH43RJHfI=" onload=hljs.initHighlightingOnLoad()></script>
 <link rel=icon href=https://markkerry.github.io/favicon.ico>
 <link rel=icon type=image/png sizes=16x16 href=https://markkerry.github.io/favicon-16x16.png>
 <link rel=icon type=image/png sizes=32x32 href=https://markkerry.github.io/favicon-32x32.png>
@@ -18,11 +17,11 @@ What is HUGO? HUGO is an open source static site generator written in GO. I chos
 <link rel=mask-icon href=https://markkerry.github.io/safari-pinned-tab.svg>
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
-<meta name=generator content="Hugo 0.92.2">
+<meta name=generator content="Hugo 0.93.2">
 <script async src="https://www.googletagmanager.com/gtag/js?id="></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','')</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config",'')</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XZDLE8M8RG"></script>
-<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-XZDLE8M8RG',{anonymize_ip:!1})}</script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-XZDLE8M8RG",{anonymize_ip:!1})}</script>
 <meta property="og:title" content="HUGO Static Site Hosted on GitHub Pages - Part 1: Intro">
 <meta property="og:description" content="The following series of posts will walk through the process I used to create and build this HUGO site, hosted in GitHub Pages. Everything required in the following posts is free. HUGO/templates, GitHub Pages, GitHub Actions is all free to use.
 What is HUGO? HUGO is an open source static site generator written in GO. I chose HUGO because it looked simple to get started, all posts are written in markdown, and was compatible with GitHub pages.">
@@ -38,14 +37,10 @@ What is HUGO? HUGO is an open source static site generator written in GO. I chos
 What is HUGO? HUGO is an open source static site generator written in GO. I chose HUGO because it looked simple to get started, all posts are written in markdown, and was compatible with GitHub pages.">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Posts","item":"https://markkerry.github.io/posts/"},{"@type":"ListItem","position":2,"name":"HUGO Static Site Hosted on GitHub Pages - Part 1: Intro","item":"https://markkerry.github.io/posts/2021/04/hugo-and-github-pages-part1/"}]}</script>
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"HUGO Static Site Hosted on GitHub Pages - Part 1: Intro","name":"HUGO Static Site Hosted on GitHub Pages - Part 1: Intro","description":"The following series of posts will walk through the process I used to create and build this HUGO site, hosted in GitHub Pages. Everything required in the following posts is free. HUGO/templates, GitHub Pages, GitHub Actions is all free to use.\nWhat is HUGO? HUGO is an open source static site generator written in GO. I chose HUGO because it looked simple to get started, all posts are written in markdown, and was compatible with GitHub pages.","keywords":["HUGO","GitHub Pages","GitHub Actions"],"articleBody":"The following series of posts will walk through the process I used to create and build this HUGO site, hosted in GitHub Pages. Everything required in the following posts is free. HUGO/templates, GitHub Pages, GitHub Actions is all free to use.\nWhat is HUGO? HUGO is an open source static site generator written in GO. I chose HUGO because it looked simple to get started, all posts are written in markdown, and was compatible with GitHub pages. It also offers 300+ themes and is a fun way to get started creating content for free.\nWhat is GitHub Pages? GitHub Pages allows you to build websites and host them directly from a GitHub repository. As long as you have a GitHub account, create a repo called username.github.io, and push some form of an index.html, you then have a website available as follows: username.github.io\nWhat is GitHub Actions? GitHub Actions is the CI/CD service I use to build my HUGO code committed to one repo, then automatically push the built site to my GitHub Pages repo.\nWhat These Posts Will Cover There are already great docs out there to get you started with HUGO and GitHub Pages, but not all of them cover automating the build and deployment of the site. When I got started using HUGO, it took me a couple of attempts to get my head around the build part, and knowing exactly what needs to be deployed to GitHub Pages. I will attempt to explain that in more detail in part 3 of these posts.\nWhat You Need to Get Started  Git installed locally Hugo installed locally A GitHub Account GitHub Desktop (helps to be signed in with you github account) GitHub repo called username-hugo GitHub repo called username.github.io  High-level Overview  The local repo username-hugo is developed locally, changes committed and pushed to the remote repo in GitHub. When the remote repo receives the new commit, it starts a GitHub action to build the site. Once the GitHub Action completes the build, it deploys the built site to the username.github.io repo. The site is then available by browsing https://username.github.io.  Next Parts  Part 2: Create the Site Part 3: Build and Deploy  ","wordCount":"362","inLanguage":"en","image":"https://markkerry.github.io/images/cover.png","datePublished":"2021-04-04T12:13:43Z","dateModified":"2021-04-04T12:13:43Z","author":{"@type":"Person","name":"Mark kerry"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://markkerry.github.io/posts/2021/04/hugo-and-github-pages-part1/"},"publisher":{"@type":"Organization","name":"markkerry.github.io","logo":{"@type":"ImageObject","url":"https://markkerry.github.io/favicon.ico"}}}</script>
-</head>
-<body id=top>
-<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add('dark'):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove('dark'):window.matchMedia('(prefers-color-scheme: dark)').matches&&document.body.classList.add('dark')</script>
+</head><body id=top>
+<script>localStorage.getItem("pref-theme")==="dark"?document.body.classList.add("dark"):localStorage.getItem("pref-theme")==="light"?document.body.classList.remove("dark"):window.matchMedia("(prefers-color-scheme: dark)").matches&&document.body.classList.add("dark")</script>
 <noscript>
-<style type=text/css>#theme-toggle,.top-link{display:none}</style>
-<style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style>
-</noscript>
-<header class=header>
+<style type=text/css>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:#1d1e20;--entry:#2e2e33;--primary:rgba(255, 255, 255, 0.84);--secondary:rgba(255, 255, 255, 0.56);--tertiary:rgba(255, 255, 255, 0.16);--content:rgba(255, 255, 255, 0.74);--hljs-bg:#2e2e33;--code-bg:#37383e;--border:#333}.list{background:var(--theme)}.list:not(.dark)::-webkit-scrollbar-track{background:0 0}.list:not(.dark)::-webkit-scrollbar-thumb{border-color:var(--theme)}}</style></noscript><header class=header>
 <nav class=nav>
 <div class=logo>
 <a href=https://markkerry.github.io/ accesskey=h title="markkerry.github.io (Alt + H)">markkerry.github.io</a>
@@ -53,104 +48,48 @@ What is HUGO? HUGO is an open source static site generator written in GO. I chos
 <button id=theme-toggle accesskey=t title="(Alt + T)"><svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg><svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
 </button>
 </span>
-</div>
-<ul id=menu>
+</div><ul id=menu>
 <li>
 <a href=https://markkerry.github.io/about/ title=About>
 <span>About</span>
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://markkerry.github.io/archive title=Archive>
 <span>Archive</span>
 </a>
-</li>
-<li>
+</li><li>
 <a href=https://markkerry.github.io/tags/ title=Tags>
 <span>Tags</span>
 </a>
-</li>
-</ul>
-</nav>
-</header>
-<main class=main>
+</li></ul></nav></header><main class=main>
 <article class=post-single>
 <header class=post-header>
-<div class=breadcrumbs><a href=https://markkerry.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://markkerry.github.io/posts/>Posts</a></div>
-<h1 class=post-title>
+<div class=breadcrumbs><a href=https://markkerry.github.io/>Home</a>&nbsp;»&nbsp;<a href=https://markkerry.github.io/posts/>Posts</a></div><h1 class=post-title>
 HUGO Static Site Hosted on GitHub Pages - Part 1: Intro
-</h1>
-<div class=post-meta>April 4, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Mark kerry
-</div>
-</header>
-<figure class=entry-cover>
+</h1><div class=post-meta>April 4, 2021&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Mark kerry
+</div></header><figure class=entry-cover>
 <img loading=lazy srcset="https://markkerry.github.io/posts/2021/04/hugo-and-github-pages-part1/images/cover_hu3259f6f23432811f4c0eb024a8ce7158_52599_360x0_resize_box_3.png 360w ,https://markkerry.github.io/posts/2021/04/hugo-and-github-pages-part1/images/cover_hu3259f6f23432811f4c0eb024a8ce7158_52599_480x0_resize_box_3.png 480w ,https://markkerry.github.io/posts/2021/04/hugo-and-github-pages-part1/images/cover_hu3259f6f23432811f4c0eb024a8ce7158_52599_720x0_resize_box_3.png 720w ,https://markkerry.github.io/posts/2021/04/hugo-and-github-pages-part1/images/cover_hu3259f6f23432811f4c0eb024a8ce7158_52599_1080x0_resize_box_3.png 1080w ,https://markkerry.github.io/posts/2021/04/hugo-and-github-pages-part1/images/cover.png 1240w" sizes="(min-width: 768px) 720px, 100vw" src=https://markkerry.github.io/posts/2021/04/hugo-and-github-pages-part1/images/cover.png alt width=1240 height=523>
-<p>Getting started with HUGO and GitHub Pages - Part 1: Intro</p>
-</figure><div class=toc>
+<p>Getting started with HUGO and GitHub Pages - Part 1: Intro</p></figure><div class=toc>
 <details>
 <summary accesskey=c title="(Alt + C)">
-<div class=details>Table of Contents</div>
-</summary>
+<div class=details>Table of Contents</div></summary>
 <div class=inner><ul>
 <li>
-<a href=#what-is-hugo aria-label="What is HUGO?">What is HUGO?</a></li>
-<li>
-<a href=#what-is-github-pages aria-label="What is GitHub Pages?">What is GitHub Pages?</a></li>
-<li>
-<a href=#what-is-github-actions aria-label="What is GitHub Actions?">What is GitHub Actions?</a></li>
-<li>
-<a href=#what-these-posts-will-cover aria-label="What These Posts Will Cover">What These Posts Will Cover</a></li>
-<li>
-<a href=#what-you-need-to-get-started aria-label="What You Need to Get Started">What You Need to Get Started</a></li>
-<li>
-<a href=#high-level-overview aria-label="High-level Overview">High-level Overview</a></li>
-<li>
+<a href=#what-is-hugo aria-label="What is HUGO?">What is HUGO?</a></li><li>
+<a href=#what-is-github-pages aria-label="What is GitHub Pages?">What is GitHub Pages?</a></li><li>
+<a href=#what-is-github-actions aria-label="What is GitHub Actions?">What is GitHub Actions?</a></li><li>
+<a href=#what-these-posts-will-cover aria-label="What These Posts Will Cover">What These Posts Will Cover</a></li><li>
+<a href=#what-you-need-to-get-started aria-label="What You Need to Get Started">What You Need to Get Started</a></li><li>
+<a href=#high-level-overview aria-label="High-level Overview">High-level Overview</a></li><li>
 <a href=#next-parts aria-label="Next Parts">Next Parts</a>
-</li>
-</ul>
-</div>
-</details>
-</div>
-<div class=post-content><p>The following series of posts will walk through the process I used to create and build this HUGO site, hosted in GitHub Pages. Everything required in the following posts is free. HUGO/templates, GitHub Pages, GitHub Actions is all free to use.</p>
-<h3 id=what-is-hugo>What is HUGO?<a hidden class=anchor aria-hidden=true href=#what-is-hugo>#</a></h3>
-<p><a href=https://gohugo.io/>HUGO</a> is an open source static site generator written in GO. I chose HUGO because it looked simple to get started, all posts are written in <a href=https://markkerry.github.io/posts/2021/02/markdown/>markdown</a>, and was compatible with GitHub pages. It also offers <a href=https://themes.gohugo.io/>300+ themes</a> and is a fun way to get started creating content for free.</p>
-<h3 id=what-is-github-pages>What is GitHub Pages?<a hidden class=anchor aria-hidden=true href=#what-is-github-pages>#</a></h3>
-<p><a href=https://pages.github.com/>GitHub Pages</a> allows you to build websites and host them directly from a GitHub repository. As long as you have a GitHub account, create a repo called <em>username</em>.github.io, and push some form of an index.html, you then have a website available as follows: <em>username</em>.github.io</p>
-<h3 id=what-is-github-actions>What is GitHub Actions?<a hidden class=anchor aria-hidden=true href=#what-is-github-actions>#</a></h3>
-<p><a href=https://docs.github.com/en/actions>GitHub Actions</a> is the CI/CD service I use to build my HUGO code committed to one repo, then automatically push the built site to my GitHub Pages repo.</p>
-<h3 id=what-these-posts-will-cover>What These Posts Will Cover<a hidden class=anchor aria-hidden=true href=#what-these-posts-will-cover>#</a></h3>
-<p>There are already great docs out there to get you started with HUGO and GitHub Pages, but not all of them cover automating the build and deployment of the site. When I got started using HUGO, it took me a couple of attempts to get my head around the build part, and knowing exactly what needs to be deployed to GitHub Pages. I will attempt to explain that in more detail in part 3 of these posts.</p>
-<h3 id=what-you-need-to-get-started>What You Need to Get Started<a hidden class=anchor aria-hidden=true href=#what-you-need-to-get-started>#</a></h3>
-<ol>
-<li>Git installed locally</li>
-<li>Hugo installed locally</li>
-<li>A GitHub Account</li>
-<li>GitHub Desktop (helps to be signed in with you github account)</li>
-<li>GitHub repo called <em>username</em>-hugo</li>
-<li>GitHub repo called <em>username</em>.github.io</li>
-</ol>
-<h3 id=high-level-overview>High-level Overview<a hidden class=anchor aria-hidden=true href=#high-level-overview>#</a></h3>
-<p><img loading=lazy src=images/hugo-ghpages.png alt=hugo-ghpages>
-</p>
-<ol>
-<li>The local repo <em>username</em>-hugo is developed locally, changes committed and pushed to the remote repo in GitHub.</li>
-<li>When the remote repo receives the new commit, it starts a GitHub action to build the site.</li>
-<li>Once the GitHub Action completes the build, it deploys the built site to the <em>username</em>.github.io repo.</li>
-<li>The site is then available by browsing <a href=https://username.github.io>https://username.github.io</a>.</li>
-</ol>
-<h3 id=next-parts>Next Parts<a hidden class=anchor aria-hidden=true href=#next-parts>#</a></h3>
-<ul>
-<li><a href=https://markkerry.github.io/posts/2021/04/hugo-and-github-pages-part2/>Part 2: Create the Site</a></li>
-<li><a href=https://markkerry.github.io/posts/2021/04/hugo-and-github-pages-part3/>Part 3: Build and Deploy</a></li>
-</ul>
-</div>
-<footer class=post-footer>
+</li></ul></div></details>
+</div><div class=post-content><p>The following series of posts will walk through the process I used to create and build this HUGO site, hosted in GitHub Pages. Everything required in the following posts is free. HUGO/templates, GitHub Pages, GitHub Actions is all free to use.</p><h3 id=what-is-hugo>What is HUGO?<a hidden class=anchor aria-hidden=true href=#what-is-hugo>#</a></h3><p><a href=https://gohugo.io/>HUGO</a> is an open source static site generator written in GO. I chose HUGO because it looked simple to get started, all posts are written in <a href=https://markkerry.github.io/posts/2021/02/markdown/>markdown</a>, and was compatible with GitHub pages. It also offers <a href=https://themes.gohugo.io/>300+ themes</a> and is a fun way to get started creating content for free.</p><h3 id=what-is-github-pages>What is GitHub Pages?<a hidden class=anchor aria-hidden=true href=#what-is-github-pages>#</a></h3><p><a href=https://pages.github.com/>GitHub Pages</a> allows you to build websites and host them directly from a GitHub repository. As long as you have a GitHub account, create a repo called <em>username</em>.github.io, and push some form of an index.html, you then have a website available as follows: <em>username</em>.github.io</p><h3 id=what-is-github-actions>What is GitHub Actions?<a hidden class=anchor aria-hidden=true href=#what-is-github-actions>#</a></h3><p><a href=https://docs.github.com/en/actions>GitHub Actions</a> is the CI/CD service I use to build my HUGO code committed to one repo, then automatically push the built site to my GitHub Pages repo.</p><h3 id=what-these-posts-will-cover>What These Posts Will Cover<a hidden class=anchor aria-hidden=true href=#what-these-posts-will-cover>#</a></h3><p>There are already great docs out there to get you started with HUGO and GitHub Pages, but not all of them cover automating the build and deployment of the site. When I got started using HUGO, it took me a couple of attempts to get my head around the build part, and knowing exactly what needs to be deployed to GitHub Pages. I will attempt to explain that in more detail in part 3 of these posts.</p><h3 id=what-you-need-to-get-started>What You Need to Get Started<a hidden class=anchor aria-hidden=true href=#what-you-need-to-get-started>#</a></h3><ol>
+<li>Git installed locally</li><li>Hugo installed locally</li><li>A GitHub Account</li><li>GitHub Desktop (helps to be signed in with you github account)</li><li>GitHub repo called <em>username</em>-hugo</li><li>GitHub repo called <em>username</em>.github.io</li></ol><h3 id=high-level-overview>High-level Overview<a hidden class=anchor aria-hidden=true href=#high-level-overview>#</a></h3><p><img loading=lazy src=images/hugo-ghpages.png alt=hugo-ghpages>
+</p><ol>
+<li>The local repo <em>username</em>-hugo is developed locally, changes committed and pushed to the remote repo in GitHub.</li><li>When the remote repo receives the new commit, it starts a GitHub action to build the site.</li><li>Once the GitHub Action completes the build, it deploys the built site to the <em>username</em>.github.io repo.</li><li>The site is then available by browsing <a href=https://username.github.io>https://username.github.io</a>.</li></ol><h3 id=next-parts>Next Parts<a hidden class=anchor aria-hidden=true href=#next-parts>#</a></h3><ul>
+<li><a href=https://markkerry.github.io/posts/2021/04/hugo-and-github-pages-part2/>Part 2: Create the Site</a></li><li><a href=https://markkerry.github.io/posts/2021/04/hugo-and-github-pages-part3/>Part 3: Build and Deploy</a></li></ul></div><footer class=post-footer>
 <ul class=post-tags>
-<li><a href=https://markkerry.github.io/tags/hugo/>HUGO</a></li>
-<li><a href=https://markkerry.github.io/tags/github-pages/>GitHub Pages</a></li>
-<li><a href=https://markkerry.github.io/tags/github-actions/>GitHub Actions</a></li>
-</ul>
-<nav class=paginav>
+<li><a href=https://markkerry.github.io/tags/hugo/>HUGO</a></li><li><a href=https://markkerry.github.io/tags/github-pages/>GitHub Pages</a></li><li><a href=https://markkerry.github.io/tags/github-actions/>GitHub Actions</a></li></ul><nav class=paginav>
 <a class=prev href=https://markkerry.github.io/posts/2021/04/serverless-laps-azure-function/>
 <span class=title>« Prev Page</span>
 <br>
@@ -161,24 +100,18 @@ HUGO Static Site Hosted on GitHub Pages - Part 1: Intro
 <br>
 <span>HUGO Static Site Hosted on GitHub Pages - Part 2: Create the Site</span>
 </a>
-</nav>
-</footer>
-</article>
-</main>
-<footer class=footer>
+</nav></footer></article></main><footer class=footer>
 <span>&copy; 2022 <a href=https://markkerry.github.io/>markkerry.github.io</a></span>
 <span>
 Powered by
 <a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
         <a href=https://git.io/hugopapermod rel=noopener target=_blank>PaperMod</a>
 </span>
-</footer>
-<a href=#top aria-label="go to top" title="Go to Top (Alt + G)">
+</footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)">
 <button class=top-link id=top-link type=button accesskey=g><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentcolor"><path d="M12 6H0l6-6z"/></svg>
 </button>
 </a>
-<script>let menu=document.getElementById('menu');menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)},document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener("click",function(b){b.preventDefault();var a=this.getAttribute("href").substr(1);window.matchMedia('(prefers-reduced-motion: reduce)').matches?document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(a)}']`).scrollIntoView({behavior:"smooth"}),a==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${a}`)})})</script>
+<script>let menu=document.getElementById("menu");menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)},document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(t){t.preventDefault();var e=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(e)}']`).scrollIntoView({behavior:"smooth"}),e==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${e}`)})})</script>
 <script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script>
-<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove('dark'),localStorage.setItem("pref-theme",'light')):(document.body.classList.add('dark'),localStorage.setItem("pref-theme",'dark'))})</script>
-</body>
-</html>
+<script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script>
+</body></html>
